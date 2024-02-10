@@ -7,9 +7,12 @@ public class GameBehavior : MonoBehaviour
 {
     public string labelText = "Collect all 4 items and win your freedom!";
     public int maxItems = 4;
+
     public bool showWinScreen = false;
+    public bool followerText = false;
 
     private int _itemsCollected = 0;
+    private int _followerCount = 0;
     private int _playerHP = 10;
 
     public int Items
@@ -31,6 +34,19 @@ public class GameBehavior : MonoBehaviour
             {
                 labelText = "Item found, only " + (maxItems - _itemsCollected) + " more to go!";
             }
+        }
+    }
+
+    public int Follower
+    {
+        get
+        {
+            return _followerCount;
+        }
+        set
+        {
+            _followerCount = value;
+            followerText = true;
         }
     }
 
@@ -60,6 +76,10 @@ public class GameBehavior : MonoBehaviour
                 SceneManager.LoadScene(0);
                 Time.timeScale = 1.0f;
             }
+        }
+        if(followerText)
+        {
+            GUI.Box(new Rect(Screen.width - 170, 20, 150, 25), "You have " + _followerCount + " followers!");
         }
     }
 }

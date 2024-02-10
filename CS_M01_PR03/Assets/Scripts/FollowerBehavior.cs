@@ -16,10 +16,13 @@ public class FollowerBehavior : MonoBehaviour
         if(collision.gameObject.name == "Player")
         {
             Destroy(this.transform.parent.gameObject);
-
             Debug.Log("Follower collected!");
 
+            //PlayerBehavior Player = collision.gameObject.GetComponent<PlayerBehavior>();
+            //Player.CloneFollower();
+
             gameManager.Items += 1;
+            gameManager.Follower += 1;
         }
     }
 }

@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &114356179
 Transform:
   m_ObjectHideFlags: 0
@@ -1132,6 +1132,7 @@ MonoBehaviour:
   labelText: Collect all 4 items and win your freedom!
   maxItems: 4
   showWinScreen: 0
+  followerText: 0
 --- !u!4 &568252402
 Transform:
   m_ObjectHideFlags: 0
@@ -5152,6 +5153,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 8194672554535613304, guid: 3768d8e5e5d77bd4a92d20bbf341db18, type: 3}
+    - target: {fileID: 2642981361050106370, guid: 29d3af053bfd3ca45869f1983ac78320, type: 3}
+      propertyPath: follower
+      value: 
+      objectReference: {fileID: 861708691250123834, guid: 0966175eb74a6794bbba8aa88bef30e6, type: 3}
     - target: {fileID: 2642981361050106370, guid: 29d3af053bfd3ca45869f1983ac78320, type: 3}
       propertyPath: bulletSpeed
       value: 25

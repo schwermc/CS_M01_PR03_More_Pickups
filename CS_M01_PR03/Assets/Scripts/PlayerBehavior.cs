@@ -14,6 +14,8 @@ public class PlayerBehavior : MonoBehaviour
     public GameObject bullet;
     public float bulletSpeed = 100f;
 
+    // public GameObject follower;
+
     private float vInput;
     private float hInput;
 
@@ -76,4 +78,12 @@ public class PlayerBehavior : MonoBehaviour
         bool grounded = Physics.CheckCapsule(_col.bounds.center, capsuleBottom, distanceToGround, groundLayer, QueryTriggerInteraction.Ignore);
         return grounded;
     }
+
+    /* public void CloneFollower()
+    {
+        // Clone the follower prefab
+        // Each follwer givers the player one hit of invisibily and follower the player around
+        follower.SetActive(true);
+    }
+    */
 }
