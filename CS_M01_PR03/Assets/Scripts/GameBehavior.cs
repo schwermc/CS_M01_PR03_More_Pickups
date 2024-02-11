@@ -10,10 +10,14 @@ public class GameBehavior : MonoBehaviour
 
     public bool showWinScreen = false;
     public bool followerText = false;
+    public bool speedLable = false;
+
+    private string speedText = "1.5 times Speed!";
 
     private int _itemsCollected = 0;
     private int _followerCount = 0;
     private int _playerHP = 10;
+    private int _speedBoostCount = 0;
 
     public int Items
     {
@@ -63,6 +67,22 @@ public class GameBehavior : MonoBehaviour
         }
     }
 
+    public int Speed
+    {
+        get
+        {
+            return _speedBoostCount;
+        }
+        set
+        {
+            _speedBoostCount = value;
+            if(_speedBoostCount > 0)
+            {
+                speedLable = true;
+            }
+        }
+    }
+
     void OnGUI()
     {
         GUI.Box(new Rect(20, 20, 150, 25), "Player Health: " + _playerHP);
@@ -80,6 +100,10 @@ public class GameBehavior : MonoBehaviour
         if(followerText)
         {
             GUI.Box(new Rect(Screen.width - 170, 20, 150, 25), "You have " + _followerCount + " followers!");
+        }
+        if(speedLable)
+        {
+            GUI.Label(new Rect(Screen.width /2 - 100, 20, 150, 25), speedText);
         }
     }
 }

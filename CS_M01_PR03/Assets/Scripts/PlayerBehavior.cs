@@ -15,6 +15,8 @@ public class PlayerBehavior : MonoBehaviour
     public float bulletSpeed = 100f;
 
     // public GameObject follower;
+    public float speedMuliplier;
+    public GameBehavior gameManager;
 
     private float vInput;
     private float hInput;
@@ -29,6 +31,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
     }
 
     void Update()
@@ -86,4 +89,18 @@ public class PlayerBehavior : MonoBehaviour
         follower.SetActive(true);
     }
     */
+
+    public void BoostSpeed(float multipler, float seconds)
+    {
+        speedMuliplier = multipler;
+        moveSpeed *= multipler;
+        Invoke("EndSpeedBoost", seconds);
+    }
+
+    private void EndSpeedBoost()
+    {
+        Debug.Log("Speed boost as ended.");
+        moveSpeed /= speedMuliplier;
+        gameManager.speedLable = false;
+    }
 }
