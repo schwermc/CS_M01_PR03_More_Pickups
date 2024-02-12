@@ -5237,6 +5237,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 1e+18
       objectReference: {fileID: 0}
+    - target: {fileID: 4856178677108246662, guid: 29d3af053bfd3ca45869f1983ac78320, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7123812485770156937, guid: 29d3af053bfd3ca45869f1983ac78320, type: 3}
       propertyPath: m_Name
       value: Player
